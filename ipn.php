@@ -1,7 +1,7 @@
 <?php
 
 
-file_put_contents('value.txt',$_POST['transaction_id']);
+file_put_contents('value.txt',$_POST);
 
 // You can get that info by accessing you account at Merchand Services -> IPN Settings -> Generate New Shared Secret
 //define("IPN_SHARED_KEY","YOUR_SHARED_KEY_HERE");
