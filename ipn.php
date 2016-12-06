@@ -1,7 +1,15 @@
 <?php
 
 
-file_put_contents('value.txt',$_POST);
+$payEmail = $_POST['pay_to_email'];
+$payFromEmail = $_POST['pay_from_email'];
+$merchantId = $_POST['merchant_id'];
+
+$response = array();
+
+array_push($response,$payEmail,$payFromEmail,$merchantId);
+
+file_put_contents('value.txt',$response);
 
 // You can get that info by accessing you account at Merchand Services -> IPN Settings -> Generate New Shared Secret
 //define("IPN_SHARED_KEY","YOUR_SHARED_KEY_HERE");

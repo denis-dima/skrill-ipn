@@ -7,9 +7,6 @@
  * Time: 16:47
  * All rights and copyrights are owned by Sevio Solutions®
  */
-
-file_put_contents('value.txt',$_POST);
-
 ?>
 <html>
 <head>
