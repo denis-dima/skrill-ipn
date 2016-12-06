@@ -8,7 +8,7 @@
  * All rights and copyrights are owned by Sevio Solutions®
  */
 
-file_put_contents('value.php',$_POST['transaction_id']);
+file_put_contents('value.txt',$_POST);
 
 ?>
 <html>
