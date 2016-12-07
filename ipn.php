@@ -1,19 +1,24 @@
 <?php
 
 
-echo $payEmail = $_POST['pay_to_email'];
-echo $payFromEmail = $_POST['pay_from_email'];
-echo $merchantId = $_POST['merchant_id'];
-echo $mbTransactionId = $_POST['mb_transaction_id'];
-echo $mbAmount = $_POST['mb_amount'];
-echo $mbCurrency = $_POST['mb_currency'];
+$transactionPayEmail = $_POST['pay_to_email'];
+$transactionPayFromEmail = $_POST['pay_from_email'];
+$transactionMerchantId = $_POST['merchant_id'];
+$transactionMbTransactionId = $_POST['mb_transaction_id'];
+$transactionMAmount = $_POST['mb_amount'];
+$transactionMbCurrency = $_POST['mb_currency'];
 //Status of the transaction: ‐2 failed / 2 processed / 0 pending / ‐1 cancelled
-echo $status = $_POST['status'];
-echo $md5sig = $_POST['md5sig'];
-echo $amount = $_POST['amount'];
-echo $currency = $_POST['currency'];
+$transactionStatus = $_POST['status'];
+$transactionMd5sig = $_POST['md5sig'];
+$transactionAmount = $_POST['amount'];
+$transactionCurrency = $_POST['currency'];
 
-file_put_contents('value.txt', $md5sig);
+
+if ($transactionStatus == 2) {
+    // Transaction is processed, do whatever you want with the given information
+} elseif($transactionStatus == 0) {
+    // Transaction is not complete, do whatever you want with the given information
+}
 
 // You can get that info by accessing you account at Merchand Services -> IPN Settings -> Generate New Shared Secret
 //define("IPN_SHARED_KEY","YOUR_SHARED_KEY_HERE");
