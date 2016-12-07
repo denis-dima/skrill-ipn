@@ -10,7 +10,6 @@
 
 define("MD5_VALUE", "thesecretword");
 
-
 $transactionPayEmail = $_POST['pay_to_email'];
 $transactionPayFromEmail = $_POST['pay_from_email'];
 $transactionMerchantId = $_POST['merchant_id'];
