@@ -1,15 +1,19 @@
 <?php
 
 
-$payEmail = $_POST['pay_to_email'];
-$payFromEmail = $_POST['pay_from_email'];
-$merchantId = $_POST['merchant_id'];
+echo $payEmail = $_POST['pay_to_email'];
+echo $payFromEmail = $_POST['pay_from_email'];
+echo $merchantId = $_POST['merchant_id'];
+echo $mbTransactionId = $_POST['mb_transaction_id'];
+echo $mbAmount = $_POST['mb_amount'];
+echo $mbCurrency = $_POST['mb_currency'];
+//Status of the transaction: ‐2 failed / 2 processed / 0 pending / ‐1 cancelled
+echo $status = $_POST['status'];
+echo $md5sig = $_POST['md5sig'];
+echo $amount = $_POST['amount'];
+echo $currency = $_POST['currency'];
 
-$response = array();
-
-array_push($response,$payEmail,$payFromEmail,$merchantId);
-
-file_put_contents('value.txt',$response);
+file_put_contents('value.txt', $md5sig);
 
 // You can get that info by accessing you account at Merchand Services -> IPN Settings -> Generate New Shared Secret
 //define("IPN_SHARED_KEY","YOUR_SHARED_KEY_HERE");
