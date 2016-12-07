@@ -49,7 +49,13 @@ if (isset($_POST['merchant_fields']))
 
 $md5signature = $transactionMerchantId . $transactionId . $transactionMAmount . $transactionMbCurrency . $transactionStatus;
 
-file_put_contents('response.txt',$transactionMd5sig," ->  " ,$md5signature);
+$arrayTest = array();
+
+array_push($arrayTest,$md5signature);
+array_push($arrayTest,$transactionMd5sig);
+
+
+file_put_contents('response.txt',$arrayTest);
 
 if ($transactionStatus == 2) {
     // Transaction is processed, do whatever you want with the given information
