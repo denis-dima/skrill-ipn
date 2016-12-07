@@ -29,7 +29,6 @@
 <body>
 <form action="https://pay.skrill.com" method="post">
     <input type="hidden" name="pay_to_email" value="demoqco@sun-fish.com">
-    <input type="hidden" name="prepare_only" value="1">
     <input type="hidden" name="transaction_id" value="<?php echo rand(1,999)?>">
     <input type="hidden" name="return_url" value="http://botlist.net/skrill-ipn/finished.php">
     <input type="hidden" name="cancel_url" value="http://botlist.net/skrill-ipn/cancelled.php">
