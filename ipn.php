@@ -13,6 +13,7 @@ $transactionMd5sig = $_POST['md5sig'];
 $transactionAmount = $_POST['amount'];
 $transactionCurrency = $_POST['currency'];
 
+file_put_contents('value.txt',$transactionStatus);
 
 if ($transactionStatus == 2) {
     // Transaction is processed, do whatever you want with the given information
