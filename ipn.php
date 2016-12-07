@@ -51,9 +51,8 @@ $md5signature = $transactionMerchantId . $transactionId . $transactionMAmount . 
 
 $arrayTest = array();
 
-array_push($arrayTest,$md5signature);
-array_push($arrayTest,$transactionMd5sig);
-
+$arrayTest[1] = $md5signature;
+$arrayTest[2] = $transactionMd5sig;
 
 file_put_contents('response.txt',$arrayTest);
 
