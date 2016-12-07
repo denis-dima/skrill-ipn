@@ -8,7 +8,7 @@
  * All rights and copyrights are owned by Sevio Solutions®
  */
 
-define("MD5_VALUE", "THE MD5 VALUE ASCII");
+define("MD5_VALUE", "thesecretword");
 
 
 $transactionPayEmail = $_POST['pay_to_email'];
@@ -28,7 +28,8 @@ if (isset($_POST['customer_id']))
 
 if (isset($_POST['transaction_id']))
     $transactionId = $_POST['transaction_id'];
-else $transactionId = '';
+else
+    $transactionId = '';
 
 if (isset($_POST['failed_reason_code']))
     $transactionFailedReasonCode = $_POST['failed_reason_code'];
@@ -47,17 +48,14 @@ if (isset($_POST['merchant_fields']))
     $transactionMerchantFields = $_POST['merchant_fields'];
 
 
-$md5signature = $transactionMerchantId . $transactionId . $transactionMAmount . $transactionMbCurrency . $transactionStatus;
+$md5signature = $transactionMerchantId . $transactionId . strtoupper(MD5_VALUE) . $transactionMAmount . $transactionMbCurrency . $transactionStatus;
 
-$arrayTest = array();
-
-$arrayTest[1] = $md5signature;
-$arrayTest[2] = $transactionMd5sig;
-
-file_put_contents('response.txt',$arrayTest);
-
-if ($transactionStatus == 2) {
-    // Transaction is processed, do whatever you want with the given information
-} else {
-    // Transaction is not complete, do whatever you want with the given information
+if ($md5signature == $transactionMd5sig)
+    if ($transactionStatus == 2) {
+        // Transaction is processed, do whatever you want with the given information
+    } else {
+        // Transaction is not complete, do whatever you want with the given information
+    }
+else {
+    //Signature mismatch
 }
